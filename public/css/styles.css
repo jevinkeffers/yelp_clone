@@ -1,0 +1,39 @@
+html {
+    color: #efefef;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+li {
+    list-style: none;
+    line-height: 2;
+    font-size: 1.2rem;
+}
+
+a:link {
+    text-decoration: none;
+    color: #efefef;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #efefef;
+}
+
+a:hover {
+    text-decoration: none;
+    color: silver;
+}
+
+a:active {
+    text-decoration: none;
+    color: #efefef;
+}
+
+.yelp_theme{
+    background: #d22127;
+    color: #efefef;
+}

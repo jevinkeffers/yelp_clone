@@ -1,0 +1,10 @@
+<h1>Welcome to Fake Yelp. Felp, as it were.</h1>
+
+<ul>
+    ${data.map(entry => {
+        return `
+        <li><a href="/business/${entry.slug}">${entry.restaurant}</a></li>
+    `
+    }).join('')}
+    
+</ul>
