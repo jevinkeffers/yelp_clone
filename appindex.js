@@ -29,6 +29,4 @@ const rootController  = require ("./routes/index");
 const businessController = require ("./routes/businessRoute");
 
 app.use('/', rootController);
-app.use('/business', businessController); // <- ROOT route
-    // .use('/', rootController)
-    // .use('/', xxroutenamexx)
+app.use('/business', businessController);

@@ -1,4 +1,6 @@
 'use strict';
+const addReview = require('../models/yelpModel')
+
 
 const express = require("express"),
     router = express.Router(),
@@ -15,7 +17,13 @@ router.get ("/", async function (req, res) {
                 partial: "partial-index"
             },
         });
-});
+})
 
+router.post ('/', async (req, res) => {
+    console.log(req.body);
+    addReview.addReview(req.body);
+    res.redirect('/');
+
+})
 
 module.exports = router;

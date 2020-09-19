@@ -2,9 +2,20 @@ html {
     color: #efefef;
 }
 
+h2 {
+    color: #d22127;
+    background-color: #efefef;
+    padding-left: 2.2rem;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
+}
+
+mark {
+    background-color: #efefef;
+    color: #d22127;
 }
 
 li {
