@@ -7,16 +7,37 @@
     <li>Most popular dish: ${data.fav_dish}</li>
     <li>Is takeout offered? ${data.takeout ? 'Yes' : 'No'}</li>
 
-<form action="/" method="POST">
-    <!-- <input type="text" name="restaurant" value=""> -->
-    <p><input type="text" name="review_title" value="" placeholder="Title"></p>
-    <p><input type="text" name="review" value="" placeholder="What did you think?"></p>
-    <p><input type="text" name="score" value="" placeholder="Score: 1-5"></p>
-    <input type="hidden" name="reviewer_id" value="${user_id}" />
-    <input type="hidden" name="restaurant_id" value="${data.id}" />
-    
-    <p><button type="submit" value="Submit">Submit</button></p>
-    
-
-</form>
+    <form action="/" method="POST">
+        <p><b>Leave a review?</b></p>
+        <input type="hidden" name="restaurant_id" value="${data.id}" />
+        <label><b>Title</b>
+            <p>
+            <input type="text" name="review_title" placeholder="Review Title" />
+            </p>
+        </label>
+        <p>
+        <label><b>My Review</b>
+            <p>
+            <textarea name="review_text" placeholder="My review of this restaurant ..." ></textarea>
+            </p>
+        </label>
+        </p>
+        <p>
+        <label for="score"><b>Your score:</b></label>
+        <select id="reviewer_score" name="reviewer_score">
+            <option value="5">5</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+        </select>
+        </p>
+        <p>
+        <button type="submit">Save Review</button>
+        </p>
+        </form>
+        </p>
+        <p>
+        <a href="/"><b>Return to Homepage</b></a>
+        </p>
 </ul>
