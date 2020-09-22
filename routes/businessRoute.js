@@ -7,7 +7,8 @@ const express = require("express"),
             return res.render("template", {
                 locals: {
                     title: "Fake Yelp",
-                    data: singleRestaurantData
+                    data: singleRestaurantData,
+                    is_logged_in: req.session.is_logged_in,
                 },
                 partials: {
                     partial: "partial-business"
@@ -15,5 +16,6 @@ const express = require("express"),
             });
     });
 
+    
 
 module.exports = router;

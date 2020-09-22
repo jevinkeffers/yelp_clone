@@ -1,3 +1,5 @@
+"use strict";
+
 const db = require("./conn");
 
 class restaurantList {
@@ -30,6 +32,6 @@ class restaurantList {
             return error.message;
         }
 };
-}
+};
 
 module.exports = restaurantList;

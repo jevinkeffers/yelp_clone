@@ -1,7 +1,6 @@
 'use strict';
 const addReview = require('../models/yelpModel')
 
-
 const express = require("express"),
     router = express.Router(),
     restaurantModel = require ("../models/yelpModel");
@@ -11,7 +10,8 @@ router.get ("/", async function (req, res) {
         return res.render("template", {
             locals: {
                 title: "Fake Yelp",
-                data: restaurantData
+                data: restaurantData,
+                is_logged_in: req.session.is_logged_in,
             },
             partials: {
                 partial: "partial-index"

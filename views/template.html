@@ -4,10 +4,15 @@
         <title>Fake Yelp | ${title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="/css/styles.css">
-        <!-- <link rel="stylesheet" type="text/css" href="../css/styles.css"> -->
     </head>
-    <body class="yelp_theme">
+    ${!!is_logged_in ? `
+        <a href="/users/logout">Logout</a>
+        ` : `
+        <a href="/users/login">Login</a>
+    `}
+    <main>
         ${partial}
+    </main>
     </body>
 </html>
 
