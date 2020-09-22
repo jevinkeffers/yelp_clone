@@ -10,10 +10,13 @@
 <form action="/" method="POST">
     <!-- <input type="text" name="restaurant" value=""> -->
     <p><input type="text" name="review_title" value="" placeholder="Title"></p>
-    <p><input type="text" name="reviewer" value="" placeholder="Your name"></p>
     <p><input type="text" name="review" value="" placeholder="What did you think?"></p>
     <p><input type="text" name="score" value="" placeholder="Score: 1-5"></p>
-    <p><input type="submit" value="Submit"></p>
+    <input type="hidden" name="reviewer_id" value="${user_id}" />
+    <input type="hidden" name="restaurant_id" value="${data.id}" />
+    
+    <p><button type="submit" value="Submit">Submit</button></p>
+    
 
 </form>
 </ul>
