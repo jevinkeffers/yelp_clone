@@ -1,15 +1,16 @@
 <h1>Welcome to Fake Yelp. Felp, as it were.</h1>
-<h2>Whoa it's ${data.restaurant}</h2>
+<h2>Whoa it's ${singleRestaurantData.restaurant}</h2>
 <ul>
-    <li>Users give ${data.restaurant} ${data.yelp_score} stars out of 5.0</li>
-    <li>${data.category}</li>
-    <li>${data.distance} from you</li>
-    <li>Most popular dish: ${data.fav_dish}</li>
-    <li>Is takeout offered? ${data.takeout ? 'Yes' : 'No'}</li>
+    <li>Users give ${singleRestaurantData.restaurant} ${singleRestaurantData.yelp_score} stars out of 5.0</li>
+    <li>${singleRestaurantData.category}</li>
+    <li>${singleRestaurantData.distance} from you</li>
+    <li>Most popular dish: ${singleRestaurantData.fav_dish}</li>
+    <li>Is takeout offered? ${singleRestaurantData.takeout ? 'Yes' : 'No'}</li>
 
-    <form action="/" method="POST">
+    <form action="/business" method="POST">
         <p><b>Leave a review?</b></p>
-        <input type="hidden" name="restaurant_id" value="${data.id}" />
+        <input type="hidden" name="restaurant_id" value="${singleRestaurantData.id}" />
+        <input type="hidden" name="restaurant_slug" value ="${singleRestaurantData.slug}" />
         <label><b>Title</b>
             <p>
             <input type="text" name="review_title" placeholder="Review Title" />
@@ -18,7 +19,7 @@
         <p>
         <label><b>My Review</b>
             <p>
-            <textarea name="review_text" placeholder="My review of this restaurant ..." ></textarea>
+            <textarea name="review" placeholder="My review of this restaurant ..." ></textarea>
             </p>
         </label>
         </p>
@@ -35,7 +36,20 @@
         <p>
         <button type="submit">Save Review</button>
         </p>
-        </form>
+    </form>
+        <p>
+            ${reviewData.map(review => {
+                return `
+                <div>
+                    ${review.first_name}
+                    ${review.review}
+                    ${review.reviewer_score}
+                    ${review.review_title}
+                </div>
+                `
+            }).join("")
+        }
+        
         </p>
         <p>
         <a href="/"><b>Return to Homepage</b></a>
